@@ -1,33 +1,31 @@
-def decoder_one_char(romainChar):
-    if romainChar == 'I':
+def decoder(romainNumber):
+    if romainNumber == 'I':
         return 1
-    if romainChar == 'V':
+    elif romainNumber == 'V':
         return 5
-    if romainChar == 'X':
+    elif romainNumber == 'X':
         return 10
-    if romainChar == 'L':
+    elif romainNumber == 'L':
         return 50
-    if romainChar == 'C':
+    elif romainNumber == 'C':
         return 100
-    if romainChar == 'D':
+    elif romainNumber == 'D':
         return 500
-    if romainChar == 'M':
+    elif romainNumber == 'M':
         return 1000
+    else:
+        result_of_conversion = 0
+        for letterIndex in range (0, len(romainNumber)):
+            if check_if_previous_number_is_lower(romainNumber, letterIndex):
+                result_of_conversion = result_of_conversion - 2 * decoder(romainNumber[letterIndex - 1])
+                result_of_conversion = result_of_conversion + decoder(romainNumber[letterIndex])
+            else:
+                result_of_conversion = result_of_conversion + decoder(romainNumber[letterIndex])
+        return result_of_conversion
 
 
-def decoder_n_identical_chars(nIdenticalChars):
-    n = len(nIdenticalChars)
-    if nIdenticalChars[0] == 'I':
-        return decoder_one_char('I') * n
-    if nIdenticalChars[0] == 'V':
-        return decoder_one_char('V') * n
-    if nIdenticalChars[0] == 'X':
-        return decoder_one_char('X') * n
-    if nIdenticalChars[0] == 'L':
-        return decoder_one_char('L') * n
-    if nIdenticalChars[0] == 'C':
-        return decoder_one_char('C') * n
-    if nIdenticalChars[0] == 'D':
-        return decoder_one_char('D') * n
-    if nIdenticalChars[0] == 'M':
-        return decoder_one_char('M') * n
+def check_if_previous_number_is_lower(romainNumber, letterIndex):
+    if decoder(romainNumber[letterIndex - 1]) < decoder(romainNumber[letterIndex]) and letterIndex != 0:
+        return True
+    else:
+        return False
