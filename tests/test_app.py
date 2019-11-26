@@ -12,6 +12,15 @@ def test_decoder_for_one_char():
     assert decoder_one_char('M') == 1000
 
 
+def test_decoder_for_two_identical_chars():
+    assert decoder_two_identical_chars("II") == 2
+    assert decoder_two_identical_chars("VV") == 10
+    assert decoder_two_identical_chars("XX") == 20
+    assert decoder_two_identical_chars("LL") == 100
+    assert decoder_two_identical_chars("CC") == 200
+    assert decoder_two_identical_chars("DD") == 1000
+    assert decoder_two_identical_chars("MM") == 2000
+
 
 
 
