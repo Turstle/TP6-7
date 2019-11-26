@@ -22,6 +22,13 @@ def test_decoder_for_two_identical_chars():
     assert decoder_two_identical_chars("MM") == 2000
 
 
-
+def test_decoder_for_n_identical_chars():
+    assert decoder_n_identical_chars("III") == 3
+    assert decoder_n_identical_chars("VVVV") == 20
+    assert decoder_n_identical_chars("XXXXX") == 50
+    assert decoder_n_identical_chars("LLLLLL") == 300
+    assert decoder_n_identical_chars("CCCCCCC") == 700
+    assert decoder_n_identical_chars("DDDDDDDD") == 4000
+    assert decoder_n_identical_chars("MMMMMMMMM") == 9000
 
 
