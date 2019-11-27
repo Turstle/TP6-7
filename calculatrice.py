@@ -24,4 +24,4 @@ def multiply(firstRomainNumber, secondRomainNumber):
 
 
 def divide(firstRomainNumber, secondRomainNumber):
-    return decoder(firstRomainNumber) / decoder(secondRomainNumber)
+    return decoder(firstRomainNumber) // decoder(secondRomainNumber)
