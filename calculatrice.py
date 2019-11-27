@@ -6,6 +6,8 @@ def calculatrice(firstRomainNumber, secondRomainNumber, symbol):
         return add(firstRomainNumber, secondRomainNumber)
     if symbol == "-":
         return substract(firstRomainNumber, secondRomainNumber)
+    if symbol == "*":
+        return multiply(firstRomainNumber, secondRomainNumber)
 
 
 def add(firstRomainNumber, secondRomainNumber):
@@ -14,3 +16,7 @@ def add(firstRomainNumber, secondRomainNumber):
 
 def substract(firstRomainNumber, secondRomainNumber):
     return decoder(firstRomainNumber) - decoder(secondRomainNumber)
+
+
+def multiply(firstRomainNumber, secondRomainNumber):
+    return decoder(firstRomainNumber) * decoder(secondRomainNumber)
