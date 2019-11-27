@@ -1,6 +1,6 @@
 from app import *
 from romains_decoder import *
-
+from calculatrice import *
 
 def test_decoder_for_one_char():
     assert decoder('I') == 1
@@ -43,3 +43,9 @@ def test_decoder_of_string_with_substractions():
     assert decoder("IV") == 4
     assert decoder("XIV") == 14
     assert decoder("MCMXLIV") == 1944
+
+
+def test_calculatrice_add():
+    assert calculatrice("X","X","+") == 20
+
+
