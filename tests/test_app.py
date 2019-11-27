@@ -49,3 +49,5 @@ def test_calculatrice_add():
     assert calculatrice("X","X","+") == 20
 
 
+def test_calculatrice_substract():
+    assert calculatrice("X", "X", "-") == 0
