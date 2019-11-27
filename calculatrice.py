@@ -8,7 +8,8 @@ def calculatrice(firstRomainNumber, secondRomainNumber, symbol):
         return substract(firstRomainNumber, secondRomainNumber)
     if symbol == "*":
         return multiply(firstRomainNumber, secondRomainNumber)
-
+    if symbol == "/":
+        return divide(firstRomainNumber, secondRomainNumber)
 
 def add(firstRomainNumber, secondRomainNumber):
     return decoder(firstRomainNumber) + decoder(secondRomainNumber)
@@ -20,3 +21,7 @@ def substract(firstRomainNumber, secondRomainNumber):
 
 def multiply(firstRomainNumber, secondRomainNumber):
     return decoder(firstRomainNumber) * decoder(secondRomainNumber)
+
+
+def divide(firstRomainNumber, secondRomainNumber):
+    return decoder(firstRomainNumber) / decoder(secondRomainNumber)

@@ -55,3 +55,7 @@ def test_calculatrice_substract():
 
 def test_calculatrice_multiply():
     assert calculatrice("X", "X", "*") == 100
+
+def test_calculatrice_divide():
+    assert calculatrice("X", "X", "/") == 1
+    assert calculatrice("IV", "II", "/") == 2
